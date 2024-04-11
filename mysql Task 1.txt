@@ -1,0 +1,29 @@
+Task 1:
+
+create an Ec2 instace 
+Install mysql database on ec2 instance 
+Connect to mysql using username and password 
+
+Q. On which port database is running 
+Q. Command to login to mysql 
+
+--  sudo yum update -y
+vim /etc/yum.repos.d/MariaDB.repo
+--- 
+[mariadb]
+name = MariaDB
+baseurl = https://rpm.mariadb.org/10.6/rhel/$releasever/$basearch
+gpgkey= https://rpm.mariadb.org/RPM-GPG-KEY-MariaDB
+gpgcheck=1
+(#link -https://mariadb.com/kb/en/yum/)
+
+yum search mariadb
+yum install  mariadb105-server.x86_64
+sudo yum install -y mariadb-server
+sudo systemctl enable mariadb
+sudo systemctl start mariadb
+sudo mysql_secure_installation
+mysql -h localhost -u root -p
+  -SHOW DATABASES;
+(#link- https://coderjony.com/blogs/installing-mysql-on-amazon-linux-2-ec2-instance-and-configure-it-for-remote-connections)
+
